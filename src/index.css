@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  body {
+    @apply bg-navy-50 text-navy-900 antialiased;
+  }
+  .dark body {
+    @apply bg-navy-950 text-navy-100;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white dark:bg-navy-800 rounded-xl shadow-card transition-shadow duration-200;
+  }
+  .card-hover {
+    @apply hover:shadow-card-hover;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-navy-200 dark:bg-navy-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-navy-300 dark:bg-navy-600;
+}
